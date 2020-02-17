@@ -1,27 +1,27 @@
-- [API Information](#markdown-header-api-information)
-- [API Endpoints](#markdown-header-api-endpoints)
-  - [Public](#markdown-header-public)
-      - [Markets](#markdown-header-markets)
-      - [Market](#markdown-header-market)
-      - [Tickers](#markdown-header-tickers)
-      - [Ticker](#markdown-header-ticker)
-      - [Order book](#markdown-header-order-book)
-      - [History](#markdown-header-history)
-      - [Depth Result](#markdown-header-depth-result)
-      - [Kline](#markdown-header-kline)
-  - [Protected](#markdown-header-protected)
-    - [Account](#markdown-header-account)
-       - [Balances](#markdown-header-balances)
-       - [Currency balance](#markdown-header-currency-balance)
-    - [Orders](#markdown-header-orders)
-       - [Order history](#markdown-header-order-history)
-       - [Order deals](#markdown-header-order-deals)
-       - [Executed history](#markdown-header-executed-history)
-       - [All executed history](#markdown-header-all-executed-history)
-       - [Order list](#markdown-header-order-list)
-       - [Create order](#markdown-header-create-order)
-       - [Cancel order](#markdown-header-cancel-order)
-     <!--  - [Cancel all orders](#markdown-header-cancel-all-orders) -->
+- [API Information](#api-information)
+- [API Endpoints](#api-endpoints)
+  - [Public](#public)
+      - [Markets](#markets)
+      - [Market](#market)
+      - [Tickers](#tickers)
+      - [Ticker](#ticker)
+      - [Order book](#order-book)
+      - [History](#history)
+      - [Depth Result](#depth-result)
+      - [Kline](#kline)
+  - [Protected](#protected)
+    - [Account](#account)
+       - [Balances](#balances)
+       - [Currency balance](#currency-balance)
+    - [Orders](#orders)
+       - [Order history](#order-history)
+       - [Order deals](#order-deals)
+       - [Executed history](#executed-history)
+       - [All executed history](#all-executed-history)
+       - [Order list](#order-list)
+       - [Create order](#create-order)
+       - [Cancel order](#cancel-order)
+     <!--  - [Cancel all orders](#cancel-all-orders) -->
 
 # Websocket API
 
@@ -87,7 +87,7 @@ curl --location --request GET "http://api.p2pb2b.io/api/v2/public/markets"
 
 ```
 
-The request returns a json with '[market](./resources.md#markdown-header-markets)' items listed. More details could be found in [resources](./resources.md).
+The request returns a json with '[market](./resources.md#markets)' items listed. More details could be found in [resources](./resources.md).
 
 
 **Response example:**
@@ -164,7 +164,7 @@ curl --location --request GET "http://api.p2pb2b.io/api/v2/public/market?market=
 
 ```
 
-The request returns a json with '[market](./resources.md#markdown-header-markets)' item. More details could be found in  [resources](./resources.md).
+The request returns a json with '[market](./resources.md#markets)' item. More details could be found in  [resources](./resources.md).
 
 
 **Response example:**
@@ -221,7 +221,7 @@ curl --location --request GET "http://api.p2pb2b.io/api/v2/public/tickers"
 
 **Resource**
 
-The request returns a json with '[ticker](./resources.md#markdown-header-tickers)' items list. More details could be found in [resources](./resources.md).
+The request returns a json with '[ticker](./resources.md#tickers)' items list. More details could be found in [resources](./resources.md).
 
 
 **Response example:**
@@ -338,7 +338,7 @@ curl --location --request GET "https://api.p2pb2b.io/api/v2/public/book?market=E
 
 ```
 
-The request returns a json with '[order book](./resources.md#markdown-header-order-book)' items list. More details could be found in [resources](./resources.md).
+The request returns a json with '[order book](./resources.md#order-book)' items list. More details could be found in [resources](./resources.md).
 
 **Response example:**
 ```javascript
@@ -452,7 +452,7 @@ Name|Type|Mandatory| Example | Description
 ------------ |------------ | ------------ | ------------ | ------------
 market | STRING | YES | ETH_BTC | Market name from the list of existing included markets
 limit | INT | NO | 1 |  Limit . Min value 1.  Default value 50 . Max value 100.  
-interval | INT | NO | 0 |   Valid values: 0, 0.00000001, 0.0000001, "0.000001, 0.00001, 0.0001, 0.001, 0.01, 0.1, 1. Default 0;  
+interval | ENUM  | NO | 0 |   Valid values: 0, 0.00000001, 0.0000001, "0.000001, 0.00001, 0.0001, 0.001, 0.01, 0.1, 1. Default 0;  
  
 
 **Сaching:**
@@ -575,7 +575,7 @@ Name| Data | Mandatory |  Description
 Content-Type | application/json | YES |   Request body transferred in JSON format.
 X-TXC-APIKEY | {{apiKey}} | YES | Account 'API key' from <https://p2pb2b.io/settings/api>
 X-TXC-PAYLOAD | {{payload}} | YES |  Body json encoded in base64
-X-TXC-SIGNATURE | {{signature}} | YES |  'Payload' encrypted using SHA512 algorithm with 'API secret' from <https://p2pb2b.io/settings/api>
+X-TXC-SIGNATURE | {{signature}} | YES |  'Payload'  encrypted using HMAC with SHA512 algorithm and 'API secret' from <https://p2pb2b.io/settings/api>
 
 
 * All requests to the private API are executed by the post method.
@@ -610,7 +610,7 @@ POST /api/v2/account/balances
 * Basic parameters only.
 
 
-The request returns a json with '[balance](./resources.md#markdown-header-markets)' items list. More details could be found in [resources](./resources.md).
+The request returns a json with '[balance](./resources.md#markets)' items list. More details could be found in [resources](./resources.md).
 
 **Request example:**
 
@@ -670,7 +670,7 @@ curl --location --request POST "https://api.p2pb2b.io/api/v2/account/balance"
 
 ```
 
-The request returns a json with '[balance](./resources.md#markdown-header-balances)' item. More details could be found in [resources](./resources.md).
+The request returns a json with '[balance](./resources.md#balances)' item. More details could be found in [resources](./resources.md).
 
 **Response example:**
 ```javascript
@@ -713,7 +713,7 @@ curl --location --request POST "https://api.p2pb2b.io/api/v2/account/order_histo
   --data "{"request":"{{request}}","nonce":"{{nonce}}"}"
 ```
 
-The request returns a json with '[order history](./resources.md#markdown-header-order-history)' items list. More details could be found in [resources](./resources.md).
+The request returns a json with '[order history](./resources.md#order-history)' items list. More details could be found in [resources](./resources.md).
 
 **Response example:**
 ```javascript
@@ -790,7 +790,7 @@ curl --location --request POST "https://api.p2pb2b.io/api/v2/account/order"
   --data "{"orderId":"123456","limit":"50","offset":"0","request":"{{request}}","nonce":"{{nonce}}"}"
 ```
 
-The request returns a json with '[order deals](./resources.md#markdown-header-order-deals)' items list. More details could be found in [resources](./resources.md).
+The request returns a json with '[order deals](./resources.md#order-deals)' items list. More details could be found in [resources](./resources.md).
 
 **Response example:**
 ```javascript
