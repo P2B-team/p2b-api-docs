@@ -106,7 +106,6 @@
     "price": "Order price.",
     "timestamp": "Time",
     "side": "Order side.",
-    "dealFee": "Order deal fee",
     "takerFee": "Taker fee",
     "makerFee": "Maker fee",
     "dealStock": "Volume for stock currency.",
