@@ -618,7 +618,7 @@ curl --location --request POST "https://api.p2pb2b.io/api/v2/account/balances"
   --header "X-TXC-APIKEY: {{apiKey}}" \
   --header "X-TXC-PAYLOAD: {{payload}}" \
   --header "X-TXC-SIGNATURE: {{signature}}" \
-  --data "{"request":"{{request}}","nonce":"{{nonce}}"}"
+  --data "{"request":"{{request}}","nonce":{{nonce}}}"
 
 ```
 
@@ -664,7 +664,7 @@ curl --location --request POST "https://api.p2pb2b.io/api/v2/account/balance"
   --header "X-TXC-APIKEY: {{apiKey}}" \
   --header "X-TXC-PAYLOAD: {{payload}}" \
   --header "X-TXC-SIGNATURE: {{signature}}" \
-  --data "{"currency":"ETH","request":"{{request}}","nonce":"{{nonce}}"}"
+  --data "{"currency":"ETH","request":"{{request}}","nonce":{{nonce}}}"
 
 ```
 
@@ -708,7 +708,7 @@ curl --location --request POST "https://api.p2pb2b.io/api/v2/account/order_histo
   --header "X-TXC-APIKEY: {{apiKey}}" \
   --header "X-TXC-PAYLOAD: {{payload}}" \
   --header "X-TXC-SIGNATURE: {{signature}}" \
-  --data "{"request":"{{request}}","nonce":"{{nonce}}"}"
+  --data "{"request":"{{request}}","nonce":{{nonce}}}"
 ```
 
 The request returns a json with '[order history](./resources.md#order-history)' items list. More details could be found in [resources](./resources.md).
@@ -785,7 +785,7 @@ curl --location --request POST "https://api.p2pb2b.io/api/v2/account/order"
   --header "X-TXC-APIKEY: {{apiKey}}" \
   --header "X-TXC-PAYLOAD: {{payload}}" \
   --header "X-TXC-SIGNATURE: {{signature}}" \
-  --data "{"orderId":"123456","limit":"50","offset":"0","request":"{{request}}","nonce":"{{nonce}}"}"
+  --data "{"orderId":"123456","limit":"50","offset":"0","request":"{{request}}","nonce":{{nonce}}}"
 ```
 
 The request returns a json with '[order deals](./resources.md#order-deals)' items list. More details could be found in [resources](./resources.md).
@@ -843,7 +843,7 @@ curl --location --request POST "https://api.p2pb2b.io/api/v2/account/executed_hi
   --header "X-TXC-APIKEY: {{apiKey}}" \
   --header "X-TXC-PAYLOAD: {{payload}}" \
   --header "X-TXC-SIGNATURE: {{signature}}" \
-  --data "{"market":"ETH_BTC","limit":"1","offset":"0","request":"{{request}}","nonce":"{{nonce}}"}"
+  --data "{"market":"ETH_BTC","limit":"1","offset":"0","request":"{{request}}","nonce":{{nonce}}}"
 ```
 
 **Response example:**
@@ -904,7 +904,7 @@ curl --location --request POST "https://api.p2pb2b.io/api/v2/account/executed_hi
   --header "X-TXC-APIKEY: {{apiKey}}" \
   --header "X-TXC-PAYLOAD: {{payload}}" \
   --header "X-TXC-SIGNATURE: {{signature}}" \
-  --data "{"limit":"10","offset":"0","request":"{{request}}","nonce":"{{nonce}}"}"
+  --data "{"limit":"10","offset":"0","request":"{{request}}","nonce":{{nonce}}}"
 ```
 
 **Response example:**
@@ -980,7 +980,7 @@ curl --location --request POST "https://api.p2pb2b.io/api/v2/orders"
   --header "X-TXC-APIKEY: {{apiKey}}" \
   --header "X-TXC-PAYLOAD: {{payload}}" \
   --header "X-TXC-SIGNATURE: {{signature}}" \
-  --data "{"market":"ETH_BTC","limit":"50","offset":"0","request":"{{request}}","nonce":"{{nonce}}"}"
+  --data "{"market":"ETH_BTC","limit":"50","offset":"0","request":"{{request}}","nonce":{{nonce}}}"
 ```
 
 **Response example:**
@@ -1061,7 +1061,7 @@ curl --location --request POST "https://api.p2pb2b.io/api/v2/order/new"
   --header "X-TXC-APIKEY: {{apiKey}}" \
   --header "X-TXC-PAYLOAD: {{payload}}" \
   --header "X-TXC-SIGNATURE: {{signature}}" \
-  --data "{"market":"ETH_BTC","side":"buy","amount":"0.001","price":"0.001","request":"{{request}}","nonce":"{{nonce}}"}"
+  --data "{"market":"ETH_BTC","side":"buy","amount":"0.001","price":"0.001","request":"{{request}}","nonce":{{nonce}}}"
 ```
 
 **Response example:**
@@ -1114,7 +1114,7 @@ curl --location --request POST "https://api.p2pb2b.io/api/v2/order/cancel"
   --header "X-TXC-APIKEY: {{apiKey}}" \
   --header "X-TXC-PAYLOAD: {{payload}}" \
   --header "X-TXC-SIGNATURE: {{signature}}" \
-  --data "{"market":"ETH_BTC", "orderId":"123456","request":"{{request}}","nonce":"{{nonce}}"}"
+  --data "{"market":"ETH_BTC", "orderId":"123456","request":"{{request}}","nonce":{{nonce}}}"
 ```
 
 **Response example:**
@@ -1168,7 +1168,7 @@ curl --location --request POST "https://api.p2pb2b.io//api/v2/order/cancel/all"
   --header "X-TXC-APIKEY: {{apiKey}}" \
   --header "X-TXC-PAYLOAD: {{payload}}" \
   --header "X-TXC-SIGNATURE: {{signature}}" \
-  --data "{"market":"ETH_BTC","request":"{{request}}","nonce":"{{nonce}}"}"
+  --data "{"market":"ETH_BTC","request":"{{request}}","nonce":{{nonce}}}"
 ```
 
 **Response example:**
