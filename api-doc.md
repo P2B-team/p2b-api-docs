@@ -32,7 +32,7 @@
 
 ## API Information
 
-* Base URL for requests is <https://api.p2pb2b.io>
+* Base URL for requests is <https://api.p2pb2b.com>
 
 The following rules may apply to DDoS attacks on API endpoints:
 
@@ -83,7 +83,7 @@ Results are cached for ~30s
 **Request example:**
 
 ```
-curl --location --request GET "http://api.p2pb2b.io/api/v2/public/markets"
+curl --location --request GET "http://api.p2pb2b.com/api/v2/public/markets"
 
 ```
 
@@ -160,7 +160,7 @@ Results are cached for ~30s
 **Request example:**
 
 ```
-curl --location --request GET "http://api.p2pb2b.io/api/v2/public/market?market=ETH_BTC"
+curl --location --request GET "http://api.p2pb2b.com/api/v2/public/market?market=ETH_BTC"
 
 ```
 
@@ -215,7 +215,7 @@ Results are cached for ~30s
 **Request example:**
 
 ```
-curl --location --request GET "http://api.p2pb2b.io/api/v2/public/tickers"
+curl --location --request GET "http://api.p2pb2b.com/api/v2/public/tickers"
 
 ```
 
@@ -334,7 +334,7 @@ Results are cached for ~1s
 **Request example:**
 
 ```
-curl --location --request GET "https://api.p2pb2b.io/api/v2/public/book?market=ETH_BTC&side=sell&offset=0&limit=100"
+curl --location --request GET "https://api.p2pb2b.com/api/v2/public/book?market=ETH_BTC&side=sell&offset=0&limit=100"
 
 ```
 
@@ -407,7 +407,7 @@ Results are cached for ~5s
 **Request example:**
 
 ```
-curl --location --request GET "https://api.p2pb2b.io/api/v2/public/history?market=ETH_BTC&lastId=1&limit=100"
+curl --location --request GET "https://api.p2pb2b.com/api/v2/public/history?market=ETH_BTC&lastId=1&limit=100"
 
 ```
 
@@ -461,7 +461,7 @@ Results are cached for ~1s
 **Request example:**
 
 ```
-curl --location --request GET "https://api.p2pb2b.io/api/v2/public/depth/result?market=ETH_BTC&limit=100"
+curl --location --request GET "https://api.p2pb2b.com/api/v2/public/depth/result?market=ETH_BTC&limit=100"
 
 ```
 
@@ -530,7 +530,7 @@ Results are cached for ~30s
 **Request example:**
 
 ```
-curl --location --request GET "http://api.p2pb2b.io/api/v2/public/market/kline?market=ETH_BTC&interval=1m&offset=0&limit=100"
+curl --location --request GET "http://api.p2pb2b.com/api/v2/public/market/kline?market=ETH_BTC&interval=1m&offset=0&limit=100"
 ```
 
 **Response example:**
@@ -559,8 +559,8 @@ curl --location --request GET "http://api.p2pb2b.io/api/v2/public/market/kline?m
 
 For requests in Protected folder you should provide apiKey and apiSecret. Use this step-by-step list:
 
-* Activate 2FA in your P2PB2B account in Account>Security <https://p2pb2b.io/settings/security>
-* Generate API key and secret in Account>API <https://p2pb2b.io/settings/api>
+* Activate 2FA in your P2PB2B account in Account>Security <https://p2pb2b.com/settings/security>
+* Generate API key and secret in Account>API <https://p2pb2b.com/settings/api>
 
 **General requirements**
 
@@ -571,9 +571,9 @@ For requests in Protected folder you should provide apiKey and apiSecret. Use th
 Name| Data | Mandatory |  Description
 ------------ |------------ | ------------ | ------------ 
 Content-Type | application/json | YES |   Request body transferred in JSON format.
-X-TXC-APIKEY | {{apiKey}} | YES | Account 'API key' from <https://p2pb2b.io/settings/api>
+X-TXC-APIKEY | {{apiKey}} | YES | Account 'API key' from <https://p2pb2b.com/settings/api>
 X-TXC-PAYLOAD | {{payload}} | YES |  Body json encoded in base64
-X-TXC-SIGNATURE | {{signature}} | YES |  'Payload'  encrypted using HMAC with SHA512 algorithm and 'API secret' from <https://p2pb2b.io/settings/api>
+X-TXC-SIGNATURE | {{signature}} | YES |  'Payload'  encrypted using HMAC with SHA512 algorithm and 'API secret' from <https://p2pb2b.com/settings/api>
 
 
 * All requests to the private API are executed by the post method.
@@ -613,7 +613,7 @@ The request returns a json with '[balance](./resources.md#markets)' items list. 
 **Request example:**
 
 ```
-curl --location --request POST "https://api.p2pb2b.io/api/v2/account/balances"
+curl --location --request POST "https://api.p2pb2b.com/api/v2/account/balances"
   --header "Content-Type: application/json" \
   --header "X-TXC-APIKEY: {{apiKey}}" \
   --header "X-TXC-PAYLOAD: {{payload}}" \
@@ -659,7 +659,7 @@ currency | STRING | YES | ETH | Currency from the list of existing included curr
 **Request example:**
 
 ```
-curl --location --request POST "https://api.p2pb2b.io/api/v2/account/balance"
+curl --location --request POST "https://api.p2pb2b.com/api/v2/account/balance"
   --header "Content-Type: application/json" \
   --header "X-TXC-APIKEY: {{apiKey}}" \
   --header "X-TXC-PAYLOAD: {{payload}}" \
@@ -703,7 +703,7 @@ POST /api/v2/account/order_history
 **Request example:**
 
 ```
-curl --location --request POST "https://api.p2pb2b.io/api/v2/account/order_history"
+curl --location --request POST "https://api.p2pb2b.com/api/v2/account/order_history"
   --header "Content-Type: application/json" \
   --header "X-TXC-APIKEY: {{apiKey}}" \
   --header "X-TXC-PAYLOAD: {{payload}}" \
@@ -780,7 +780,7 @@ limit | INT | NO | 1 | limit . Min value 1.  Default value 50 . Max value 100.
 **Request example:**
 
 ```
-curl --location --request POST "https://api.p2pb2b.io/api/v2/account/order"
+curl --location --request POST "https://api.p2pb2b.com/api/v2/account/order"
   --header "Content-Type: application/json" \
   --header "X-TXC-APIKEY: {{apiKey}}" \
   --header "X-TXC-PAYLOAD: {{payload}}" \
@@ -838,7 +838,7 @@ limit | INT | NO | 1 | limit . Min value 1.  Default value 50 . Max value 100.
 **Request example:**
 
 ```
-curl --location --request POST "https://api.p2pb2b.io/api/v2/account/executed_history"
+curl --location --request POST "https://api.p2pb2b.com/api/v2/account/executed_history"
   --header "Content-Type: application/json" \
   --header "X-TXC-APIKEY: {{apiKey}}" \
   --header "X-TXC-PAYLOAD: {{payload}}" \
@@ -899,7 +899,7 @@ offset | INT | NO | 0 | Limit . Min value 1.  Default value 50 . Max value 100.
 **Request example:**
 
 ```
-curl --location --request POST "https://api.p2pb2b.io/api/v2/account/executed_history/all"
+curl --location --request POST "https://api.p2pb2b.com/api/v2/account/executed_history/all"
   --header "Content-Type: application/json" \
   --header "X-TXC-APIKEY: {{apiKey}}" \
   --header "X-TXC-PAYLOAD: {{payload}}" \
@@ -975,7 +975,7 @@ limit | INT | NO | 1 | limit . Min value 1.  Default value 50 . Max value 100.
 **Request example:**
 
 ```
-curl --location --request POST "https://api.p2pb2b.io/api/v2/orders"
+curl --location --request POST "https://api.p2pb2b.com/api/v2/orders"
   --header "Content-Type: application/json" \
   --header "X-TXC-APIKEY: {{apiKey}}" \
   --header "X-TXC-PAYLOAD: {{payload}}" \
@@ -1056,7 +1056,7 @@ price | STRING | YES | 0.004846 | Price
 **Request example:**
 
 ```
-curl --location --request POST "https://api.p2pb2b.io/api/v2/order/new"
+curl --location --request POST "https://api.p2pb2b.com/api/v2/order/new"
   --header "Content-Type: application/json" \
   --header "X-TXC-APIKEY: {{apiKey}}" \
   --header "X-TXC-PAYLOAD: {{payload}}" \
@@ -1109,7 +1109,7 @@ orderId | INT | YES | 25749 | Order id for cancel
 **Request example:**
 
 ```
-curl --location --request POST "https://api.p2pb2b.io/api/v2/order/cancel"
+curl --location --request POST "https://api.p2pb2b.com/api/v2/order/cancel"
   --header "Content-Type: application/json" \
   --header "X-TXC-APIKEY: {{apiKey}}" \
   --header "X-TXC-PAYLOAD: {{payload}}" \
@@ -1163,7 +1163,7 @@ market | STRING | YES | ETH_BTC | Market name from the list of existing enabled 
 **Request example:**
 
 ```
-curl --location --request POST "https://api.p2pb2b.io//api/v2/order/cancel/all"
+curl --location --request POST "https://api.p2pb2b.com//api/v2/order/cancel/all"
   --header "Content-Type: application/json" \
   --header "X-TXC-APIKEY: {{apiKey}}" \
   --header "X-TXC-PAYLOAD: {{payload}}" \
