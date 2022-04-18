@@ -282,7 +282,7 @@ Results are cached for ~30s
 **Request example:**
 
 ```
-curl --location --request GET "http://api.p2pb2b.io/api/v2/public/ticker?market=ETH_BTC"
+curl --location --request GET "http://api.p2pb2b.com/api/v2/public/ticker?market=ETH_BTC"
 
 ```
 
