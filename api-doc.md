@@ -559,8 +559,8 @@ curl --location --request GET "http://api.p2pb2b.com/api/v2/public/market/kline?
 
 For requests in Protected folder you should provide apiKey and apiSecret. Use this step-by-step list:
 
-* Activate 2FA in your P2PB2B account in Account>Security <https://p2pb2b.com/settings/security>
-* Generate API key and secret in Account>API <https://p2pb2b.com/settings/api>
+* Activate 2FA in your P2PB2B account in Account>Security <https://p2pb2b.com/account/security>
+* Generate API key and secret in Account>API <https://p2pb2b.com/account/api>
 
 **General requirements**
 
@@ -571,9 +571,9 @@ For requests in Protected folder you should provide apiKey and apiSecret. Use th
 Name| Data | Mandatory |  Description
 ------------ |------------ | ------------ | ------------ 
 Content-Type | application/json | YES |   Request body transferred in JSON format.
-X-TXC-APIKEY | {{apiKey}} | YES | Account 'API key' from <https://p2pb2b.com/settings/api>
+X-TXC-APIKEY | {{apiKey}} | YES | Account 'API key' from <https://p2pb2b.com/account/api>
 X-TXC-PAYLOAD | {{payload}} | YES |  Body json encoded in base64
-X-TXC-SIGNATURE | {{signature}} | YES |  'Payload'  encrypted using HMAC with SHA512 algorithm and 'API secret' from <https://p2pb2b.com/settings/api>
+X-TXC-SIGNATURE | {{signature}} | YES |  'Payload'  encrypted using HMAC with SHA512 algorithm and 'API secret' from <https://p2pb2b.com/account/api>
 
 
 * All requests to the private API are executed by the post method.
