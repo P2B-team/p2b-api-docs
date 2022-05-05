@@ -240,6 +240,7 @@ The request returns a json with '[ticker](./resources.md#tickers)' items list. M
                 "high": "0.03952763",
                 "last": "0.039",
                 "vol": "59161.64311441",
+                "deal": "26.185802798",
                 "change": "-3.25" 
             }
         },
@@ -252,6 +253,7 @@ The request returns a json with '[ticker](./resources.md#tickers)' items list. M
                 "high": "4142.8685",
                 "last": "4140.989",
                 "vol": "2613.29685416",
+                "deal": "44569811.52006821",
                 "change": "1.09" 
             }
         },
