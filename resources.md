@@ -59,6 +59,7 @@
         "high": "The high price.",
         "last": "The last price.",
         "vol":  "Volume of Trade.",
+        "deal":  "Deals of Trade.",
         "change": "Changing price (in percents)." 
     }
 }
