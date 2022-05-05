@@ -53,3 +53,7 @@ Category | Error code | Status Code | Response message | Description
 Category | Error code | Status Code | Response message | Description
 ------------ | ------------ | ------------ | ------------ | ------------
   service | 4001  | 500 | Service temporary unavailable.  |  An unexpected system error has occurred. Try again after a while. If the error persists, please contact support.
+
+Category | Error code | Status Code | Response message | Description
+------------ | ------------ | ------------ | ------------ | ------------
+  exchange | 6010  | 400 | Balance not enough. | Insufficient balance.
