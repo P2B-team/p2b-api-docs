@@ -25,9 +25,9 @@
 
 # Websocket API
 
-<https://p2pb2bwsspublic.docs.apiary.io/>
+- [WSS](https://github.com/P2B-team/P2B-WSS-Public/blob/main/wss_documentation.md)
 
-# Rest API for P2PB2B
+# Rest API for P2B
 
 
 ## API Information
@@ -561,7 +561,7 @@ curl --location --request GET "http://api.p2pb2b.com/api/v2/public/market/kline?
 
 For requests in Protected folder you should provide apiKey and apiSecret. Use this step-by-step list:
 
-* Activate 2FA in your P2PB2B account in Account>Security <https://p2pb2b.com/account/security>
+* Activate 2FA in your P2B account in Account>Security <https://p2pb2b.com/account/security>
 * Generate API key and secret in Account>API <https://p2pb2b.com/account/api>
 
 **General requirements**
