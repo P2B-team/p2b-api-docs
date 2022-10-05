@@ -451,7 +451,7 @@ GET /api/v2/public/depth/result
 Name|Type|Mandatory| Example | Description
 ------------ |------------ | ------------ | ------------ | ------------
 market | STRING | YES | ETH_BTC | Market name from the list of existing included markets
-limit | INT | NO | 1 |  Limit . Min value 1.  Default value 50 . Max value 100.  
+limit | INT | NO | 1 |  Limit . Min value 1.  Default value 500 . Max value 1000.  
 interval | ENUM  | NO | 0 |   Valid values: 0, 0.00000001, 0.0000001, "0.000001, 0.00001, 0.0001, 0.001, 0.01, 0.1, 1. Default 0;  
  
 
@@ -895,8 +895,8 @@ POST /api/v2/account/executed_history/all
 
 Name|Type|Mandatory| Example | Description
 ------------ |------------ | ------------ | ------------ | ------------
-limit | INT | NO | 50 | Offset . Min value 0. Default 0. Max value 10000.   
-offset | INT | NO | 0 | Limit . Min value 1.  Default value 50 . Max value 100.   
+offset | INT | NO | 0 | Offset . Min value 0. Default 0. Max value 10000.   
+limit | INT | NO | 50 | Limit . Min value 1.  Default value 50 . Max value 100.
 
 **Request example:**
 
