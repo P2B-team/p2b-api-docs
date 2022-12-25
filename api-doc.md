@@ -34,12 +34,6 @@
 
 * Base URL for requests is <https://api.p2pb2b.com>
 
-The following rules may apply to DDoS attacks on API endpoints:
-
-* If an IP address exceeds 5 requests per second and 100 requests per minute to a specific REST API endpoint e.g., /api/v2/account/balance, the requesting IP address will be blocked for 1 minute. 
-
-Please note the exact logic and handling for such DDoS defenses may change over time to further improve the reliability.
-
 ## API Endpoints
 
 Possible errors when executing queries: 
