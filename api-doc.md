@@ -1,50 +1,45 @@
-- [Websocket API](#websocket-api)
-- [Rest API for P2B](#rest-api-for-p2b)
-  - [API Information](#api-information)
-  - [API Endpoints](#api-endpoints)
-    - [Public](#public)
-      - [Markets](#markets)
-      - [Market](#market)
-      - [Tickers](#tickers)
-      - [Ticker](#ticker)
-      - [Order book](#order-book)
-      - [History](#history)
-      - [Depth Result](#depth-result)
-      - [Kline](#kline)
-    - [Protected](#protected)
-      - [Account/Balances](#accountbalances)
-        - [All Balances](#all-balances)
-        - [Balance by currency](#balance-by-currency)
-      - [Account/Trade](#accounttrade)
-        - [Create order](#create-order)
-        - [Cancel order](#cancel-order)
-        - [Open orders](#open-orders)
-        - [Orders history by market](#orders-history-by-market)
-        - [Deals history by market](#deals-history-by-market)
-        - [Deals by order ID](#deals-by-order-id)
-        - [Order history](#order-history)
-        - [Executed history](#executed-history)
 
+- [P2B API Documentation](#p2b-api-documentation)
+  - [General](#general)
+  - [Errors](#errors)
+- [Public API](#public-api)
+    - [Markets](#markets)
+    - [Market](#market)
+    - [Tickers](#tickers)
+    - [Ticker](#ticker)
+    - [Order book](#order-book)
+    - [History](#history)
+    - [Depth Result](#depth-result)
+    - [Kline](#kline)
+- [Protected API](#protected-api)
+  - [Account/Balances](#accountbalances)
+    - [All Balances](#all-balances)
+    - [Balance by currency](#balance-by-currency)
+  - [Account/Trade](#accounttrade)
+    - [Create order](#create-order)
+    - [Cancel order](#cancel-order)
+    - [Open orders](#open-orders)
+    - [Orders history by market](#orders-history-by-market)
+    - [Deals history by market](#deals-history-by-market)
+    - [Deals by order ID](#deals-by-order-id)
+    - [Order history](#order-history)
+    - [Executed history](#executed-history)
   
 
-# Websocket API
-
-- [WSS](https://github.com/P2B-team/P2B-WSS-Public/blob/main/wss_documentation.md)
-
-# Rest API for P2B
+# P2B API Documentation
 
 
-## API Information
+## General
 
-* Base URL for requests is <https://api.p2pb2b.com>
+* Base URL:  **https://api.p2pb2b.com**
 
-## API Endpoints
+## Errors
 
-Possible errors when executing queries: 
+* See in [Errors](./errors.md)
 
-* [Errors](./errors.md)
 
-### Public
+# Public API
+
 
 Public folder requests available without authentication.
 
@@ -54,13 +49,14 @@ Public folder requests available without authentication.
 * Parameters may be required or optional.
 * More information can be found in the description of a specific endpoint.
 
-**Info**
+**Info:**
 
 * **offset**  Default value = 0. The passed parameter will be selected according to these requirements. The nearest larger value will be set, which is a multiple of the change step.
 
 * **limit**  Value change step = 1. The passed parameter will be casted to these requirements. The nearest larger value will be set, which is a multiple of the change step, but not bigger than the allowed maximum.
 
-#### Markets
+
+### Markets
 
 
 Get info on all markets.
@@ -135,7 +131,9 @@ curl --location --request GET "http://api.p2pb2b.com/api/v2/public/markets"
     "current_time": 1698731498.885766
 }
 ```
-#### Market
+
+
+### Market
 
 Get limits for market.
 
@@ -179,28 +177,29 @@ curl --location --request GET "http://api.p2pb2b.com/api/v2/public/market?market
     "errorCode": "",
     "message": "",
     "result": {
-        "name":"ETH_BTC",           // market name
-        "stock":"ETH",              // stock ticker
-        "money":"BTC",              // money ticker
+        "name":"ETH_BTC",           // Market name
+        "stock":"ETH",              // Stock ticker
+        "money":"BTC",              // Money ticker
         "precision": {  
-            "money":"6",            // money precision
-            "stock":"3",            // stock precision
-            "fee":"4"               // fee precision
+            "money":"6",            // Money precision
+            "stock":"3",            // Stock precision
+            "fee":"4"               // Fee precision
         },
         "limits": {
-            "min_amount":"0.001",   // min amount value
-            "max_amount":"100000",  // max amount value
-            "step_size":"0.001",    // min step size for changing the amount
-            "min_price":"0.000001", // min price value
-            "max_price":"100000",   // max price value
-            "tick_size":"0.000001", // min step size for changing the price
-            "min_total":"0.0001"    // min total value
+            "min_amount":"0.001",   // Min amount value
+            "max_amount":"100000",  // Max amount value
+            "step_size":"0.001",    // Min step size for changing the amount
+            "min_price":"0.000001", // Min price value
+            "max_price":"100000",   // Max price value
+            "tick_size":"0.000001", // Min step size for changing the price
+            "min_total":"0.0001"    // Min total value
         }
     }
 }
 ```
 
-#### Tickers
+
+### Tickers
 
 Get trade details for all tickers.
 
@@ -234,11 +233,11 @@ curl --location --request GET "http://api.p2pb2b.com/api/v2/public/tickers"
         "ETH_BTC": {
             "at": 1698732273,
             "ticker": {
-                "bid": "0.052422",          // best bid price
-                "ask": "0.05266",           // best ask price
-                "low": "0.05201",           // lowest price
-                "high": "0.053",            // highest price
-                "last": "0.05253",          // last price
+                "bid": "0.052422",          // Best bid price
+                "ask": "0.05266",           // Best ask price
+                "low": "0.05201",           // Lowest price
+                "high": "0.053",            // Highest price
+                "last": "0.05253",          // Last price
                 "vol": "227.0479",          // 24-hour trading volume denoted in stock
                 "deal": "11.9195756492",    // 24-hour trading volume denoted in money
                 "change": "0.98"            // 24-hour perice change
@@ -263,7 +262,8 @@ curl --location --request GET "http://api.p2pb2b.com/api/v2/public/tickers"
 }
 ```
 
-#### Ticker
+
+### Ticker
 
 Get trade details for a ticker.
 
@@ -296,12 +296,12 @@ curl --location --request GET "http://api.p2pb2b.com/api/v2/public/ticker?market
     "errorCode": "",
     "message": "",
     "result": {
-        "bid": "34301.89",            // best bid price
-        "ask": "34302.09",            // best ask price
-        "open": "34240.35",           // open price
-        "high": "34855.97",           // highest price
-        "low": "34078.64",            // lowest price
-        "last": "34302",              // last price
+        "bid": "34301.89",            // Best bid price
+        "ask": "34302.09",            // Best ask price
+        "open": "34240.35",           // Open price
+        "high": "34855.97",           // Highest price
+        "low": "34078.64",            // Lowest price
+        "last": "34302",              // Last price
         "volume": "5473.04784",       // 24-hour trading volume denoted in stock
         "deal": "188611751.32669417", // 24-hour trading volume denoted in money
         "change": "0.18"              // 24-hour perice change
@@ -311,7 +311,8 @@ curl --location --request GET "http://api.p2pb2b.com/api/v2/public/ticker?market
 }
 ```
 
-#### Order book
+
+### Order book
 
 Get all active orders by market.
 
@@ -383,7 +384,8 @@ curl --location --request GET "https://api.p2pb2b.com/api/v2/public/book?market=
 }
 ```
 
-#### History
+
+### History
 
 Recent trade list by market. For each market available last 10 000 deals. 
 
@@ -437,7 +439,8 @@ curl --location --request GET "https://api.p2pb2b.com/api/v2/public/history?mark
 }
 ```
 
-#### Depth Result
+
+### Depth Result
 
 Order depth for a market.
 
@@ -498,7 +501,8 @@ curl --location --request GET "https://api.p2pb2b.com/api/v2/public/depth/result
 }
 ```
 
-#### Kline
+
+### Kline
 
 ```
 GET /api/v2/public/market/kline
@@ -561,7 +565,7 @@ curl --location --request GET "http://api.p2pb2b.com/api/v2/public/market/kline?
 ```
 
 
-### Protected
+# Protected API
 
 For requests in Protected folder you should provide apiKey and apiSecret. Use this step-by-step list:
 
@@ -598,9 +602,11 @@ nonce | INT | YES | 1575537501932 | Timestamp in millisecond
 
 * The number of user requests to the endpoints of the protected API is limited. Not more than 10 requests per second.
 
-#### Account/Balances
 
-##### All Balances
+## Account/Balances
+
+
+### All Balances
 
 List of user balances for all currencies.
 
@@ -646,7 +652,8 @@ curl --location 'https://api.p2pb2b.com/api/v2/account/balances' \
 }
 ```
 
-##### Balance by currency
+
+### Balance by currency
 
 User balance for the selected currency.
 
@@ -660,7 +667,7 @@ POST /api/v2/account/balance
 
 Name|Type|Mandatory| Example | Description
 ------------ |------------ | ------------ | ------------ | ------------
-currency | STRING | YES | ETH | Currency from the list of existing included currencies
+currency | STRING | YES | ETH | Currency name
 
 **Request example:**
 
@@ -691,12 +698,13 @@ curl --location 'https://api.p2pb2b.com/api/v2/account/balance' \
 }
 ```
 
-#### Account/Trade
 
-##### Create order
+## Account/Trade
+
+
+### Create order
 
 Create in a new limit order
-
 
 ```
 POST /api/v2/order/new
@@ -764,7 +772,7 @@ curl --location 'https://api.p2pb2b.com/api/v2/order/new' \
 ```
 
 
-##### Cancel order
+### Cancel order
 
 Cancel an active order.
 
@@ -824,7 +832,7 @@ curl --location 'https://api.p2pb2b.com/api/v2/order/cancel' \
 ```
 
 
-##### Open orders
+### Open orders
 
 Query unfilled or partially filled orders.
 
@@ -902,7 +910,7 @@ curl --location 'https://api.p2pb2b.com/api/v2/orders' \
 ```
 
 
-##### Orders history by market
+### Orders history by market
 
 Query orders history. Note, only filled or partially filled and canceled orders are returning.
 Only the transaction records in the past 3 month can be queried.
@@ -989,7 +997,7 @@ curl --location 'https://api.p2pb2b.com/api/v2/account/market_order_history' \
 ```
 
 
-##### Deals history by market
+### Deals history by market
 
 Query deals history. 
 Only the transaction records in the past 3 month can be queried.
@@ -1073,7 +1081,8 @@ curl --location 'https://api.p2pb2b.com/api/v2/account/market_deal_history' \
 }
 ```
 
-##### Deals by order ID
+
+### Deals by order ID
 
 Get deal details for the filled order id.
 
@@ -1134,7 +1143,8 @@ curl --location 'https://api.p2pb2b.com/api/v2/account/order' \
 }
 ```
 
-##### Order history
+
+### Order history
 
 Query executed orders. 
 The method will be removed soon.
@@ -1208,8 +1218,7 @@ curl --location --request POST "https://api.p2pb2b.com/api/v2/account/order_hist
 ```
 
 
-
-##### Executed history
+### Executed history
 
 List of executed deals for a market.
 The method will be removed soon.
@@ -1274,3 +1283,4 @@ curl --location --request POST "https://api.p2pb2b.com/api/v2/account/executed_h
     }
 }
 ```
+
