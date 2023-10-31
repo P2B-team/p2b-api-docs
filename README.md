@@ -4,7 +4,7 @@
 
 * [errors.md](./errors.md) - Descriptions of possible error messages.
 
-* [resources.md](./resources.md) - Details of response.
+
 
 
 The following projects will help you interact with the P2B API:
